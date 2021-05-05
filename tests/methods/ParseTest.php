@@ -129,6 +129,19 @@ class ParseTest extends TestCase {
         self::assertEquals($expected, $this->csv->data);
     }
 
+    public function testSingleColumnFromDataString() {
+        $dataString = file_get_contents(__DIR__ . '/../example_files/single_column.csv');
+
+        $this->csv->autoDetectionForDataString($dataString);
+        $expected = [
+            ['SMS' => '0444'],
+            ['SMS' => '5555'],
+            ['SMS' => '6606'],
+            ['SMS' => '7777'],
+        ];
+        self::assertEquals($expected, $this->csv->data);
+    }
+
     public function testMatomoData() {
         // Matomo (Piwik) export cannot be read with
         $this->csv->use_mb_convert_encoding = true;
@@ -338,5 +351,7 @@ class ParseTest extends TestCase {
         self::assertFalse($this->csv->parse(null));
         self::assertFalse($this->csv->parseFile(''));
         self::assertFalse($this->csv->parseFile(null));
+        self::assertFalse($this->csv->parseDataString(''));
+        self::assertFalse($this->csv->parseDataString(null));
     }
 }

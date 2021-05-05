@@ -637,6 +637,20 @@ class Csv {
     }
 
     /**
+     * Parse the given data string.
+     * @param $data Data string to parse.
+     * @return array|false
+     */
+    public function parseDataString($data) {
+        $this->file = null;
+        $this->file_data = null;
+
+        $this->loadDataString($data);
+
+        return !empty($this->file_data) ? $this->_parse_string() : false;
+    }
+
+    /**
      * Internal function to parse CSV strings to arrays.
      *
      * If you need BOM detection or character encoding conversion, please call

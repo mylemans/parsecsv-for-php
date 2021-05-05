@@ -7,3 +7,5 @@
 /vendor/
 examples/people.csv
 tests/.phpunit.result.cache
+coverage-html
+.phpunit.result.cache

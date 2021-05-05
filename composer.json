@@ -47,7 +47,7 @@
     },
     "scripts": {
         "test": [
-            "phpunit -c tests tests --disallow-test-output --coverage-clover coverage_clover.xml --whitelist src"
+            "phpunit -c tests tests --disallow-test-output --coverage-clover coverage_clover.xml --whitelist src --coverage-text --coverage-html coverage-html"
         ]
     },
     "support": {
