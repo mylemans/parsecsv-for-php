@@ -5,3 +5,5 @@
 /phive.xml
 /tools
 /vendor/
+examples/people.csv
+tests/.phpunit.result.cache

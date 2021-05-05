@@ -8,3 +8,4 @@
 /ruleset.xml export-ignore
 /tests export-ignore
 * text=false
+*.php text=auto
