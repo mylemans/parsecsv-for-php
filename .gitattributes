@@ -7,3 +7,4 @@
 /Makefile export-ignore
 /ruleset.xml export-ignore
 /tests export-ignore
+* text=false
